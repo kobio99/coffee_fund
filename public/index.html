@@ -46,7 +46,9 @@
 			};
 
 			// The start method will wait until the DOM is loaded.
-			ui.start('#firebaseui-auth-container', uiConfig);
+			if (ui.isPendingRedirect()) {
+			  ui.start('#firebaseui-auth-container', uiConfig);
+			}
 		</script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
